@@ -1,0 +1,51 @@
+---
+input:
+    Linear :
+        in_features: None # Will be determined programatically.
+        out_features: 512
+
+    LeakyReLU:
+        negative_slope: 0.1
+
+    BatchNorm1d:
+        num_features : 512
+
+    Dropout:
+        p: 0.5
+
+hidden_layer_1:
+    Linear :
+        in_features: 512
+        out_features: 256
+
+    LeakyReLU:
+        negative_slope: 0.1
+
+    BatchNorm1d:
+        num_features : 256
+
+    Dropout:
+        p: 0.5
+
+hidden_layer_2:
+    Linear :
+        in_features: 256
+        out_features: 128
+
+    LeakyReLU:
+        negative_slope: 0.1
+
+    BatchNorm1d:
+        num_features : 128
+
+    Dropout:
+        p: 0.5
+
+classification:
+
+        Linear :
+            in_features: 128
+            out_features: None # Will be determined programatically.
+
+        LeakyReLU:
+            negative_slope: 0.1
